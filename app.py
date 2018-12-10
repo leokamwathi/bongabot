@@ -29,13 +29,14 @@ def receive_message():
                 #Facebook Messenger ID for user so we know where to send response back to
                 recipient_id = message['sender']['id']
                 if message['message'].get('text'):
-                    response_sent_text = get_message()
+                    response_sent_text = get_message(recipient_id,message['message'].get('text'))
                     send_message(recipient_id, response_sent_text)
                 #if user sends us a GIF, photo,video, or any other non-text item
                 if message['message'].get('attachments'):
-                    response_sent_nontext = get_message()
+                    response_sent_nontext = get_message(recipient_id,'Can you guess what I am thinking.')
                     send_message(recipient_id, response_sent_nontext)
     return "Message Processed"
+
 
 
 def verify_fb_token(token_sent):
@@ -51,6 +52,14 @@ def get_message():
     sample_responses = ["You are stunning!", "We're proud of you.", "Keep on being you!", "We're greatful to know you :)"]
     # return selected item to the user
     return random.choice(sample_responses)
+
+#chats with bot
+def chatBot(username,msg):
+    url = "http://api.program-o.com/v2/chatbot/?bot_id=1461104637241651&say=" + str(msg) + "&convo_id=" + str(username) + "&format=json"
+    response = requests.get(url)
+    data = response.json()
+    reply = json.loads(data.replace("'",'"'))
+    return (reply["botsay"])
 
 #uses PyMessenger to send response to user
 def send_message(recipient_id, response):
