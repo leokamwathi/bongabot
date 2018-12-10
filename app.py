@@ -3,6 +3,9 @@ import random
 from flask import Flask, request
 from pymessenger.bot import Bot
 import os 
+import requests
+import json
+
 app = Flask(__name__)
 #ACCESS_TOKEN = 'ACCESS_TOKEN'   #
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
