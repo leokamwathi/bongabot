@@ -15,7 +15,6 @@ bot = Bot(ACCESS_TOKEN)
 livebot = LiveBot()
 # We will receive messages that Facebook sends our bot at this endpoint
 
-
 @app.route("/", methods=['GET', 'POST'])
 def receive_message():
     if request.method == 'GET':

@@ -5,9 +5,9 @@ from bot_chatdata import BotChatData
 
 class LiveBot():
     def __init__(self):
-        self.chatdata = BotChatData()
-        self.reflections = self.chatdata.reflections
-        self.psychobabble = self.chatdata.psychobabble
+        #self.chatdata = BotChatData()
+        self.reflections = BotChatData().reflections
+        self.psychobabble = BotChatData().psychobabble
 
     def reflect(self,fragment):
         tokens = fragment.lower().split()
