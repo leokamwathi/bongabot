@@ -13,6 +13,7 @@ ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
 bot = Bot(ACCESS_TOKEN)
 livebot = LiveBot()
+
 # We will receive messages that Facebook sends our bot at this endpoint
 
 @app.route("/", methods=['GET', 'POST'])
@@ -26,13 +27,20 @@ def receive_message():
     else:
         # get whatever message a user sent the bot
         output = request.get_json()
+        log(output)
+
         for event in output['entry']:
             messaging = event['messaging']
             for message in messaging:
                 if message.get('message'):
                     # Facebook Messenger ID for user so we know where to send response back to
                     recipient_id = message['sender']['id']
+                    send_isTyping(recipient_id)
                     if message['message'].get('text'):
+
+                        if message['message'].get('text') == "file test":
+                            send_file(recipient_id)
+                        else:
                         response_sent_text = livebot.chat(message['message'].get('text'))
                         send_message(recipient_id, response_sent_text)
                     # if user sends us a GIF, photo,video, or any other non-text item
@@ -65,6 +73,29 @@ def send_message(recipient_id, response):
     bot.send_text_message(recipient_id, response)
     return "success"
 
+
+def send_file(recipient_id):
+    # sends user the text message provided via input response parameter
+    bot.send_file_url("")
+    return "success"
+
+
+def send_isTyping(recipient_id):
+    # sends user the text message provided via input response parameter
+    bot.send_action(recipient_id,'typing_on') #.send_text_message(recipient_id, response)
+    return "success"
+
+
+def log(msg, *args, **kwargs):  # simple wrapper for logging to stdout on heroku
+    try:
+        if type(msg) is dict:
+            msg = json.dumps(msg)
+        else:
+            msg = unicode(msg).format(*args, **kwargs)
+        print (u"{}: {}".format(datetime.now(), msg))
+    except UnicodeEncodeError:
+        pass  # squash logging errors in case of non-ascii text
+    sys.stdout.flush()
 
 if __name__ == "__main__":
     app.run()

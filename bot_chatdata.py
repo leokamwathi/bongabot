@@ -5,6 +5,7 @@ from psych_chatdata import PsychoChatData
 from love_chatdata import LoveChatData
 from philo_chatdata import PhiloChatData
 class BotChatData():
+    
     def __init__(self):
         self.reflections = PsychChatReflections().reflections
         self.psychobabble = []
