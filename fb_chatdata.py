@@ -1,14 +1,18 @@
 class FacebookChatData():
+    
+
+
     def __init__(self):
-        
+        #(?:^|\W)die(?:$|\W)
+        word = lambda x : r'(?:^|\W)'+x+r'(?:$|\W)'
         self.psychobabble = [
-            [r'(.*)die(.*)',
+            [word('die'),
             ["YOUR LIFE IS IMPORTANT. PLEASE TALK TO A FRIEND OR SOMEONE ABOUT THIS OR VISIT THIS SITE (https://suicidepreventionlifeline.org/). I AM A BOT AND I CAN'T HELP YOU."]],
 
-            [r'(.*)kill(.*)',
+            [word('kill'),
             ["LIFE IS IMPORTANT. PLEASE TALK TO A FRIEND OR SOMEONE ABOUT THIS OR VISIT THIS SITE (https://suicidepreventionlifeline.org/). I AM A BOT AND I CAN'T HELP YOU."]],
 
-            [r'(.*)sucide (.*)',
+            [word('sucide'),
             ["YOUR LIFE IS IMPORTANT. PLEASE TALK TO A FRIEND OR SOMEONE ABOUT THIS OR VISIT THIS SITE (https://suicidepreventionlifeline.org/). I AM A BOT AND I CAN'T HELP YOU."]],
 
             [r'what is your name',
@@ -42,5 +46,8 @@ class FacebookChatData():
             ["I like talking to you."]],
 
             [r'(.*) what are you (.*)',
-            ["I am the live chat bot. Talk to me."]]
+            ["I am the live chat bot. Talk to me."]],
+
+            [r'(.*)',
+            ["Follow the white rabbit."]]
         ]

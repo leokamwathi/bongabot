@@ -33,4 +33,4 @@ class BotChatData():
                     data =[]
                     data.append(pattern)
                     data.append(responses)
-                    self.psychobabble.append(data)
+                    self.psychobabble.insert(-1,data)
