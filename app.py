@@ -5,6 +5,11 @@ from flask import Flask, request
 from pymessenger.bot import Bot
 from live_bot import LiveBot
 import os
+import sys
+import json
+from datetime import datetime
+
+
 
 app = Flask(__name__)
 #ACCESS_TOKEN = 'ACCESS_TOKEN'   #
@@ -79,7 +84,7 @@ def send_file(recipient_id):
     return "success"
 
 
-def send_isTyping(recipient_id):
+def send_isTyping(recipient_id):\
     # sends user the text message provided via input response parameter
     bot.send_action(recipient_id,'typing_on') #.send_text_message(recipient_id, response)
     return "success"
@@ -90,7 +95,7 @@ def log(msg, *args, **kwargs):  # simple wrapper for logging to stdout on heroku
         if type(msg) is dict:
             msg = json.dumps(msg)
         else:
-            msg = unicode(msg).format(*args, **kwargs)
+            msg = str(msg).format(*args, **kwargs)
         print (u"{}: {}".format(datetime.now(), msg))
     except UnicodeEncodeError:
         pass  # squash logging errors in case of non-ascii text
