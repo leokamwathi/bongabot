@@ -19,7 +19,27 @@ class LiveBot():
 
     def chat(self,statement):
         for pattern, responses in self.psychobabble:
-            match = re.match(pattern, statement.rstrip(".!"))
-            if match:
-                response = random.choice(responses)
-                return response.format(*[self.reflect(g) for g in match.groups()])
+            try:
+                match = re.match(pattern, statement.rstrip(".!"))
+                if match:
+                    response = random.choice(responses)
+                    try:
+                        return response.format(*[self.reflect(g) for g in match.groups()])
+                    except:
+                        pass
+            except:
+                return "Random " + self.genericResponse()
+
+    def genericResponse(self):
+        for pattern, responses in self.psychobabble:
+            try:
+                match = re.match(pattern, "qwertwet qwerty qwerqt")
+                if match:
+                    response = random.choice(responses)
+                    try:
+                        return response.format(" that")
+                    except:
+                        pass
+            except:
+                return "Let change the topic. Tell me about your friends."
+

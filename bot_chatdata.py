@@ -4,14 +4,16 @@ from psych_chatreflections import PsychChatReflections
 from psych_chatdata import PsychoChatData
 from love_chatdata import LoveChatData
 from philo_chatdata import PhiloChatData
+from eliza_chatdata import ElizaChatData
 class BotChatData():
     
     def __init__(self):
         self.reflections = PsychChatReflections().reflections
         self.psychobabble = []
-        self.addChatData(PsychoChatData().psychobabble)
-        self.addChatData(LoveChatData().psychobabble)
-        self.addChatData(PhiloChatData().psychobabble)
+        self.addChatData(ElizaChatData().psychobabble)
+        #self.addChatData(PsychoChatData().psychobabble)
+        #self.addChatData(LoveChatData().psychobabble)
+        #self.addChatData(PhiloChatData().psychobabble)
 
     def addChatData(self,chatdata):
         if self.psychobabble == []:

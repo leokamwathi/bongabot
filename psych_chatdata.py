@@ -2,25 +2,25 @@ class PsychoChatData():
     def __init__(self):
 
         self.psychobabble = [
-            [r'(.*)Who are you(.*)',
+            [r'(.*) Who are you (.*)',
             ["I am the live chat bot. Talk to me."]],
 
-            [r'(.*)Who are you(.*)',
+            [r'(.*) Who are you (.*)',
             ["I am the live chat bot. Talk to me."]],
 
-            [r'(.*)do you like(.*)',
+            [r'(.*) do you like (.*)',
             ["I like talking to you."]],
 
-            [r'(.*)What are you(.*)',
+            [r'(.*) What are you (.*)',
             ["I am the live chat bot. Talk to me."]],
 
-            [r'(.*)die(.*)',
+            [r'(.*) die (.*)',
             ["YOUR LIFE IS IMPORTANT. PLEASE TALK TO A FRIEND OR SOMEONE ABOUT THIS OR VISIT THIS SITE (https://suicidepreventionlifeline.org/). I AM A BOT AND I CAN'T HELP YOU."]],
 
-            [r'(.*)kill(.*)',
+            [r'(.*) kill (.*)',
             ["LIFE IS IMPORTANT. PLEASE TALK TO A FRIEND OR SOMEONE ABOUT THIS OR VISIT THIS SITE (https://suicidepreventionlifeline.org/). I AM A BOT AND I CAN'T HELP YOU."]],
 
-            [r'(.*)sucide(.*)',
+            [r'(.*) sucide (.*)',
             ["YOUR LIFE IS IMPORTANT. PLEASE TALK TO A FRIEND OR SOMEONE ABOUT THIS OR VISIT THIS SITE (https://suicidepreventionlifeline.org/). I AM A BOT AND I CAN'T HELP YOU."]],
 
             [r'I need (.*)',
@@ -131,7 +131,7 @@ class PsychoChatData():
             "How do computers make you feel?",
             "Do you feel threatened by computers?"]],
 
-            [r'(.*) computer(.*)',
+            [r'(.*) bot(.*)',
             ["Are you really talking about me?",
             "Does it seem strange to talk to a bot?",
             "How do bots make you feel?",

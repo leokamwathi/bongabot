@@ -12,10 +12,11 @@ def main():
 
     while True:
         statement = input("> ")
-        print (livebot.chat(statement))
-
         if statement == "quit":
+            print("Good bye. I was lovely talking to you.")
             break
+        else:
+            print (livebot.chat(statement))
 
 
 if __name__ == "__main__":
