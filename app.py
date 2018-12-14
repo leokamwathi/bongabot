@@ -37,12 +37,11 @@ def receive_message():
                     recipient_id = message['sender']['id']
                     send_isTyping(recipient_id)
                     if message['message'].get('text'):
-
                         if message['message'].get('text') == "file test":
                             send_file(recipient_id)
                         else:
-                        response_sent_text = livebot.chat(message['message'].get('text'))
-                        send_message(recipient_id, response_sent_text)
+                            response_sent_text = livebot.chat(message['message'].get('text'))
+                            send_message(recipient_id, response_sent_text)
                     # if user sends us a GIF, photo,video, or any other non-text item
                     if message['message'].get('attachments'):
                         response_sent_nontext = livebot.chat('something else')
@@ -76,7 +75,7 @@ def send_message(recipient_id, response):
 
 def send_file(recipient_id):
     # sends user the text message provided via input response parameter
-    bot.send_file_url("")
+    bot.send_file_url(recipient_id , "http://pdf.oac.cdlib.org/pdf/hoover/mboya.pdf")
     return "success"
 
 
