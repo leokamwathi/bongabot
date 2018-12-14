@@ -20,7 +20,7 @@ class LiveBot():
     def chat(self,statement):
         for pattern, responses in self.psychobabble:
             try:
-                match = re.match(pattern, statement.rstrip(".!"))
+                match = re.match(pattern, statement.lower().rstrip(".!"))
                 if match:
                     response = random.choice(responses)
                     try:

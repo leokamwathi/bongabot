@@ -5,13 +5,15 @@ from psych_chatdata import PsychoChatData
 from love_chatdata import LoveChatData
 from philo_chatdata import PhiloChatData
 from eliza_chatdata import ElizaChatData
+from fb_chatdata import FacebookChatData
 class BotChatData():
     
     def __init__(self):
         self.reflections = PsychChatReflections().reflections
         self.psychobabble = []
+        self.addChatData(FacebookChatData().psychobabble)
         self.addChatData(ElizaChatData().psychobabble)
-        #self.addChatData(PsychoChatData().psychobabble)
+        self.addChatData(PsychoChatData().psychobabble)
         #self.addChatData(LoveChatData().psychobabble)
         #self.addChatData(PhiloChatData().psychobabble)
 

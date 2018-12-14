@@ -2,27 +2,6 @@ class PsychoChatData():
     def __init__(self):
 
         self.psychobabble = [
-            [r'(.*) Who are you (.*)',
-            ["I am the live chat bot. Talk to me."]],
-
-            [r'(.*) Who are you (.*)',
-            ["I am the live chat bot. Talk to me."]],
-
-            [r'(.*) do you like (.*)',
-            ["I like talking to you."]],
-
-            [r'(.*) What are you (.*)',
-            ["I am the live chat bot. Talk to me."]],
-
-            [r'(.*) die (.*)',
-            ["YOUR LIFE IS IMPORTANT. PLEASE TALK TO A FRIEND OR SOMEONE ABOUT THIS OR VISIT THIS SITE (https://suicidepreventionlifeline.org/). I AM A BOT AND I CAN'T HELP YOU."]],
-
-            [r'(.*) kill (.*)',
-            ["LIFE IS IMPORTANT. PLEASE TALK TO A FRIEND OR SOMEONE ABOUT THIS OR VISIT THIS SITE (https://suicidepreventionlifeline.org/). I AM A BOT AND I CAN'T HELP YOU."]],
-
-            [r'(.*) sucide (.*)',
-            ["YOUR LIFE IS IMPORTANT. PLEASE TALK TO A FRIEND OR SOMEONE ABOUT THIS OR VISIT THIS SITE (https://suicidepreventionlifeline.org/). I AM A BOT AND I CAN'T HELP YOU."]],
-
             [r'I need (.*)',
             ["Why do you need {0}?",
             "Would it really help you to get {0}?",
