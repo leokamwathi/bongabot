@@ -16,7 +16,7 @@ class FacebookChatData():
             ["YOUR LIFE IS IMPORTANT. PLEASE TALK TO A FRIEND OR SOMEONE ABOUT THIS OR VISIT THIS SITE (https://suicidepreventionlifeline.org/). I AM A BOT AND I CAN'T HELP YOU."]],
 
             [r'what is your name',
-            ["My name is Liev the ChatBot"]],
+            ["My name is Liev the ChatBot."]],
 
             [r'what are you',
             ["I am a Chat Bot"]],
