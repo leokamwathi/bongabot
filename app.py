@@ -102,9 +102,10 @@ def log(msg, *args, **kwargs):  # simple wrapper for logging to stdout on heroku
         pass  # squash logging errors in case of non-ascii text
     sys.stdout.flush()
 def dbConnect():
-    DATABASE_URL = os.environ['DATABASE_URL']
-    conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-    
+    pass
+    #DATABASE_URL = os.environ['DATABASE_URL']
+    #conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
 
 def addUser(recipient_id):
     pass
