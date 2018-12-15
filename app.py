@@ -8,10 +8,11 @@ import os
 import sys
 import json
 from datetime import datetime
+import psycopg2
 
 
 app = Flask(__name__)
-#ACCESS_TOKEN = 'ACCESS_TOKEN'   #
+#ACCESS_TOKEN = 'ACCESS_TOKEN'   different for each app#
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 #VERIFY_TOKEN = 'VERIFY_TOKEN'   #
 VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
@@ -39,6 +40,7 @@ def receive_message():
                 if message.get('message'):
                     # Facebook Messenger ID for user so we know where to send response back to
                     recipient_id = message['sender']['id']
+
                     send_isTyping(recipient_id)
                     if message['message'].get('text'):
                         if message['message'].get('text') == "file test":
@@ -99,6 +101,13 @@ def log(msg, *args, **kwargs):  # simple wrapper for logging to stdout on heroku
     except UnicodeEncodeError:
         pass  # squash logging errors in case of non-ascii text
     sys.stdout.flush()
+def dbConnect():
+    DATABASE_URL = os.environ['DATABASE_URL']
+    conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+    
+
+def addUser(recipient_id):
+    pass
 
 if __name__ == "__main__":
     app.run()
