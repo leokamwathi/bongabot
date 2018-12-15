@@ -28,7 +28,7 @@ class FacebookChatData():
             ["Hello, How are you doing today."]],
 
             [r'good morning',
-            ["Good Morning to you to. I hope we can chat today"]],
+            ["Good Morning to you too. I hope we can chat today"]],
 
             [r'goodbye',
             ["Thank you for the lovely chat. Goodbye"]],
