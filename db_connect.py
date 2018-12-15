@@ -29,7 +29,8 @@ Promoting HEROKU_POSTGRESQL_COLOR_URL to DATABASE_URL... done
 #Now we can go ahead and import the library and add the basic connection boilerplate:
 ###
 
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask import Flask, request
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
